@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FingerprintProvider from "@/components/FingerprintProvider";
+import { ToastProvider } from "@/components/Toast";
 
 export const metadata: Metadata = {
   title: "WaitFree",
@@ -13,8 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="antialiased">
-        {children}
+      <body className="bg-white text-gray-900 antialiased">
+        <FingerprintProvider>
+          <ToastProvider>
+            <div className="mx-auto min-h-screen max-w-[480px] px-4 py-6">
+              {children}
+            </div>
+          </ToastProvider>
+        </FingerprintProvider>
       </body>
     </html>
   );

@@ -1,10 +1,10 @@
 # WaitFree — HANDOFF (작업 인수인계)
 
 ## 마지막 완료
-Chunk 3
+Chunk 4
 
 ## 현재 상태
-제보 API(POST /api/report)와 기관 등록 API(POST /api/organization) 완성. 빌드 정상 통과.
+메인 페이지 UI + 상태 카드 완성. 빌드 정상 통과.
 
 ## 주의사항
 - Chunk 0은 사람이 직접 (Supabase, Vercel, GitHub 계정 + 저장소)
@@ -17,9 +17,14 @@ Chunk 3
 - 기관 등록 시 전화번호 정규화: 하이픈 제거
 - 제보 API에서 서버 측 fingerprint = combineFingerprint(browserFp, clientIP)로 생성
 - 기관 등록 API에서 동일한 fingerprint 방식으로 24시간 내 3개 제한 적용
+- FingerprintProvider + ToastProvider가 layout.tsx에서 앱 전체를 감싸고 있음
+- StatusCard는 클라이언트 컴포넌트로 /api/status/[orgId]를 직접 fetch
+- OrgList의 각 아이템은 축소 상태에서도 signal을 가져와 소형 신호등으로 표시
+- 라이트 모드만 지원 (PRD 기준), 다크 모드 CSS 제거됨
+- globals.css에서 커스텀 toast-in 애니메이션 정의
 
 ## 다음 작업
-Chunk 4 시작 (메인 페이지 UI + 상태 카드)
+Chunk 5 시작 (기관 등록 페이지 + Realtime)
 
 ## 히스토리
 | 시점 | 내용 |
@@ -28,3 +33,4 @@ Chunk 4 시작 (메인 페이지 UI + 상태 카드)
 | Chunk 1 완료 | 프로젝트 초기 세팅 (패키지 설치, Supabase 클라이언트, migration.sql, 상수/타입, 폴더 구조) |
 | Chunk 2 완료 | 핑거프린트 유틸(fingerprint.ts), ping 함수(ping.ts), 신호등 판정(signal.ts), status API, admin 클라이언트 |
 | Chunk 3 완료 | 제보 API(report), 기관 등록 API(organization), 추가 마이그레이션(migration_chunk3.sql) |
+| Chunk 4 완료 | 메인 페이지 UI(layout, page), 상태 카드(StatusCard), 신호등(TrafficLight), Preset 탭(PresetTabs), 기관 리스트(OrgList), 핑거프린트 Provider, Toast, Skeleton, ErrorState |

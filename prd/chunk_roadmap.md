@@ -182,23 +182,23 @@
 **선행조건:** Chunk 3 완료 (report API, status API 동작)
 
 **상세 작업:**
-- [ ] 레이아웃 컴포넌트: src/app/layout.tsx
+- [x] 레이아웃 컴포넌트: src/app/layout.tsx
   - 시스템 폰트, Tailwind 기본 설정
   - 모바일 우선 레이아웃 (max-width 480px 중앙 컨테이너)
   - 메타 태그 (SEO 기본)
-- [ ] 메인 페이지: src/app/page.tsx
+- [x] 메인 페이지: src/app/page.tsx
   - 서버 컴포넌트: Supabase에서 기관 목록 fetch
   - 헤더: "WaitFree" + "공공기관 지금 터졌나요?"
   - Preset 탭 영역 (정부24 / 국민건강보험공단)
   - 사용자 등록 기관 리스트 (아코디언)
   - "+ 다른 기관 추가하기" 버튼
-- [ ] 탭 컴포넌트: src/components/PresetTabs.tsx (클라이언트 컴포넌트)
+- [x] 탭 컴포넌트: src/components/PresetTabs.tsx (클라이언트 컴포넌트)
   - 탭 전환 (URL 변경 없음)
   - 선택된 탭의 상태 카드 표시
-- [ ] 신호등 컴포넌트: src/components/TrafficLight.tsx
+- [x] 신호등 컴포넌트: src/components/TrafficLight.tsx
   - green/yellow/red/gray 상태별 색상 + glow 효과
   - 80px 이상 원형
-- [ ] 상태 카드 컴포넌트: src/components/StatusCard.tsx (클라이언트 컴포넌트)
+- [x] 상태 카드 컴포넌트: src/components/StatusCard.tsx (클라이언트 컴포넌트)
   - 기관 이름 + 종류 뱃지
   - 신호등 (TrafficLight)
   - 제보 요약 텍스트
@@ -207,25 +207,25 @@
   - 제보 완료 시 토스트 + 쿨다운 타이머
   - 웹사이트 기관: 마지막 ping 시간 + 보조 메시지
   - 최근 제보 타임라인 (5개)
-- [ ] 사용자 등록 기관 리스트: src/components/OrgList.tsx
+- [x] 사용자 등록 기관 리스트: src/components/OrgList.tsx
   - 기관 카드 축소형 (이름 + 소형 신호등 + 종류 뱃지)
   - 클릭 시 아코디언 펼침 → StatusCard
   - 빈 상태: "아직 등록된 기관이 없어요"
-- [ ] 핑거프린트 Provider: src/components/FingerprintProvider.tsx
+- [x] 핑거프린트 Provider: src/components/FingerprintProvider.tsx
   - Context로 fingerprint 값 앱 전체에 제공
-- [ ] 토스트 컴포넌트: src/components/Toast.tsx
+- [x] 토스트 컴포넌트: src/components/Toast.tsx
   - 제보 완료, 에러 메시지 표시 (3초 후 자동 닫힘)
-- [ ] 스켈레톤 UI: src/components/Skeleton.tsx
+- [x] 스켈레톤 UI: src/components/Skeleton.tsx
   - 로딩 중 신호등 모양 스켈레톤
-- [ ] 에러 상태 UI: src/components/ErrorState.tsx
+- [x] 에러 상태 UI: src/components/ErrorState.tsx
   - 네트워크 오류 시 메시지 + 재시도 버튼
 
 **완료조건:**
-- [ ] 메인 페이지에서 정부24, 건강보험공단 탭 전환 정상 동작
-- [ ] 상태 카드에서 신호등 + 제보 요약 정상 표시
-- [ ] 제보 버튼 클릭 → API 호출 → 성공 토스트 + 쿨다운 타이머 표시
-- [ ] 전화 기관에서 대기 인원 입력 가능
-- [ ] 모바일 뷰에서 깔끔하게 표시
+- [x] 메인 페이지에서 정부24, 건강보험공단 탭 전환 정상 동작
+- [x] 상태 카드에서 신호등 + 제보 요약 정상 표시
+- [x] 제보 버튼 클릭 → API 호출 → 성공 토스트 + 쿨다운 타이머 표시
+- [x] 전화 기관에서 대기 인원 입력 가능
+- [x] 모바일 뷰에서 깔끔하게 표시
 
 ---
 
