@@ -117,11 +117,11 @@
 **선행조건:** Chunk 1 완료 + .env 키 입력 + DB 마이그레이션 실행 완료
 
 **상세 작업:**
-- [ ] 핑거프린트 유틸 구현: src/lib/fingerprint.ts
+- [x] 핑거프린트 유틸 구현: src/lib/fingerprint.ts
   - 클라이언트: @fingerprintjs/fingerprintjs로 브라우저 핑거프린트 생성
   - 서버: request IP 추출 (x-forwarded-for 헤더)
   - 결합: SHA-256 해시 생성 함수
-- [ ] GET /api/status/[orgId] 구현: src/app/api/status/[orgId]/route.ts
+- [x] GET /api/status/[orgId] 구현: src/app/api/status/[orgId]/route.ts
   - 기관 정보 조회
   - website 타입: 최신 ping 결과 확인 + 5분 경과 시 on-demand ping 실행
   - 최근 10분 제보 집계 (good/bad 카운트)
@@ -129,19 +129,19 @@
   - 최근 제보 5개 타임라인
   - 신호등 판정 로직 (PRD 판정 공식 기준)
   - 보조 메시지 생성
-- [ ] On-demand ping 내부 함수 구현: src/lib/ping.ts
+- [x] On-demand ping 내부 함수 구현: src/lib/ping.ts
   - URL로 GET 요청 (타임아웃 10초, User-Agent 설정)
   - 응답 시간 측정 + ping_results INSERT
   - 연속 실패 감지 → ping_enabled 업데이트
-- [ ] 신호등 판정 로직 유틸: src/lib/signal.ts
+- [x] 신호등 판정 로직 유틸: src/lib/signal.ts
   - 웹사이트: ping 기반 판정 + 제보 보조 메시지
   - 전화: 제보 비율 기반 판정
   - 회색(정보 없음) 처리
 
 **완료조건:**
-- [ ] GET /api/status/{orgId}에 정부24 orgId 넣으면 JSON 응답 정상 반환
-- [ ] 핑거프린트 생성 함수가 일관된 해시값 반환
-- [ ] 신호등 판정이 PRD 기준표대로 동작
+- [x] GET /api/status/{orgId}에 정부24 orgId 넣으면 JSON 응답 정상 반환
+- [x] 핑거프린트 생성 함수가 일관된 해시값 반환
+- [x] 신호등 판정이 PRD 기준표대로 동작
 
 ---
 
