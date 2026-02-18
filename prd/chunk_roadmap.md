@@ -236,7 +236,7 @@
 **선행조건:** Chunk 4 완료 (메인 페이지, 상태 카드 UI 동작)
 
 **상세 작업:**
-- [ ] 기관 등록 페이지: src/app/add/page.tsx
+- [x] 기관 등록 페이지: src/app/add/page.tsx
   - ← 뒤로가기 버튼 + "새 기관 등록" 헤더
   - 폼: 기관 이름 + 종류 토글(웹사이트/전화) + URL 또는 전화번호 입력
   - 입력 검증 (클라이언트 사이드)
@@ -247,24 +247,24 @@
   - 성공: "등록 완료!" 토스트 + 메인으로 이동
   - 409 (중복): "이미 등록된 곳이에요!" + 해당 기관 링크
   - 429 (제한): "오늘은 더 등록할 수 없어요"
-- [ ] Supabase Realtime 연결: src/hooks/useRealtimeReports.ts
+- [x] Supabase Realtime 연결: src/hooks/useRealtimeReports.ts
   - reports 테이블 INSERT 구독
   - org_id 필터링
   - 새 제보 수신 시 상태 카드 데이터 갱신
   - 기관 전환 시 이전 구독 해제 + 새 구독
-- [ ] 오프라인/연결 끊김 감지: src/hooks/useConnectionStatus.ts
+- [x] 오프라인/연결 끊김 감지: src/hooks/useConnectionStatus.ts
   - Supabase 채널 상태 모니터링
   - 끊김 시 배너 표시: "실시간 연결이 끊겼어요. 새로고침해주세요"
   - 재연결 시 GET /api/status 호출로 동기화
-- [ ] StatusCard에 Realtime 통합
+- [x] StatusCard에 Realtime 통합
   - useRealtimeReports 훅 연결
   - 새 제보 들어오면 카운트 + 타임라인 실시간 업데이트
 
 **완료조건:**
-- [ ] /add 페이지에서 기관 등록 → 메인에서 즉시 표시
-- [ ] 중복 기관 등록 시도 시 적절한 에러 메시지
-- [ ] 브라우저 2개 열고 한쪽에서 제보 → 다른 쪽에서 실시간 반영
-- [ ] 네트워크 끊었다 연결 시 데이터 동기화
+- [x] /add 페이지에서 기관 등록 → 메인에서 즉시 표시
+- [x] 중복 기관 등록 시도 시 적절한 에러 메시지
+- [x] 브라우저 2개 열고 한쪽에서 제보 → 다른 쪽에서 실시간 반영
+- [x] 네트워크 끊었다 연결 시 데이터 동기화
 
 ---
 

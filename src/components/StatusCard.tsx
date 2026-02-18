@@ -6,6 +6,8 @@ import Skeleton from "./Skeleton";
 import ErrorState from "./ErrorState";
 import { useFingerprint } from "./FingerprintProvider";
 import { useToast } from "./Toast";
+import { useRealtimeReports } from "@/hooks/useRealtimeReports";
+import { useConnectionStatus } from "@/hooks/useConnectionStatus";
 import type { OrgType, OrgStatusResponse, ReportStatus } from "@/types";
 
 interface StatusCardProps {
@@ -43,9 +45,23 @@ export default function StatusCard({
     }
   }, [orgId]);
 
+  const refreshStatus = useCallback(async () => {
+    try {
+      const res = await fetch(`/api/status/${orgId}`);
+      if (!res.ok) return;
+      const data: OrgStatusResponse = await res.json();
+      setStatus(data);
+    } catch {
+      // Silent fail for background refresh
+    }
+  }, [orgId]);
+
   useEffect(() => {
     fetchStatus();
   }, [fetchStatus]);
+
+  useRealtimeReports(orgId, refreshStatus);
+  const isConnected = useConnectionStatus(orgId, refreshStatus);
 
   useEffect(() => {
     if (cooldown <= 0) return;
@@ -80,7 +96,7 @@ export default function StatusCard({
         showToast("제보 완료!", "success");
         setCooldown(300);
         setWaitCount("");
-        fetchStatus();
+        refreshStatus();
       } else if (res.status === 429) {
         showToast(data.error, "error");
         setCooldown(data.retryAfterSeconds || 300);
@@ -103,6 +119,12 @@ export default function StatusCard({
 
   return (
     <div className="rounded-xl bg-gray-50 p-5">
+      {!isConnected && (
+        <div className="mb-3 rounded-lg bg-yellow-50 px-3 py-2 text-center text-xs text-yellow-700">
+          실시간 연결이 끊겼어요. 새로고침해주세요
+        </div>
+      )}
+
       <div className="mb-4 flex items-center gap-2">
         <h2 className="text-lg font-bold">{orgName}</h2>
         <span className="rounded-full bg-gray-200 px-2 py-0.5 text-xs text-gray-600">
