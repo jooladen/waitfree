@@ -1,0 +1,13 @@
+export const PING_INTERVAL_MS = 300_000;
+export const REPORT_COOLDOWN_MS = 300_000;
+export const REPORT_WINDOW_MS = 600_000;
+export const ORG_REGISTER_DAILY_LIMIT = 3;
+export const PING_TIMEOUT_MS = 10_000;
+export const PING_FAST_MS = 1_000;
+export const PING_SLOW_MS = 5_000;
+export const CONSECUTIVE_FAIL_THRESHOLD = 2;
+export const CONSECUTIVE_BLOCK_THRESHOLD = 5;
+export const TIMELINE_LIMIT = 5;
+export const MAX_WAIT_COUNT = 999;
+export const ORG_NAME_MIN = 2;
+export const ORG_NAME_MAX = 50;
