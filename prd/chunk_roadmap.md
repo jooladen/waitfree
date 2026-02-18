@@ -152,13 +152,13 @@
 **선행조건:** Chunk 2 완료 (핑거프린트, status API 동작)
 
 **상세 작업:**
-- [ ] POST /api/report 구현: src/app/api/report/route.ts
+- [x] POST /api/report 구현: src/app/api/report/route.ts
   - Request body 검증 (orgId, status 필수 / waitCount 선택)
   - fingerprint + orgId로 5분 내 중복 체크
   - waitCount 범위 검증 (0~999)
   - reports INSERT
   - 에러 응답: 400, 404, 429, 500
-- [ ] POST /api/organization 구현: src/app/api/organization/route.ts
+- [x] POST /api/organization 구현: src/app/api/organization/route.ts
   - Request body 검증 (name, type 필수 / url 또는 phone)
   - 기관 이름 길이 검증 (2~50자)
   - URL 정규화 (프로토콜 제거, trailing slash 제거, 소문자)
@@ -169,9 +169,9 @@
   - 에러 응답: 400, 409, 429, 500
 
 **완료조건:**
-- [ ] POST /api/report로 제보 성공 + 5분 내 재제보 시 429 응답
-- [ ] POST /api/organization으로 기관 등록 성공 + 중복 등록 시 409 응답
-- [ ] 잘못된 입력에 대해 적절한 에러 코드 반환
+- [x] POST /api/report로 제보 성공 + 5분 내 재제보 시 429 응답
+- [x] POST /api/organization으로 기관 등록 성공 + 중복 등록 시 409 응답
+- [x] 잘못된 입력에 대해 적절한 에러 코드 반환
 
 ---
 
