@@ -275,36 +275,36 @@
 **선행조건:** Chunk 5 완료 (모든 기능 동작)
 
 **상세 작업:**
-- [ ] SEO 메타 태그 완성: src/app/layout.tsx
+- [x] SEO 메타 태그 완성: src/app/layout.tsx
   - title, description, canonical
   - Open Graph: og:title, og:description, og:image, og:type
   - Twitter Card: twitter:card, twitter:title, twitter:description
-- [ ] OG 이미지: public/og-image.png
+- [x] OG 이미지: public/og-image.png
   - 정적 이미지 (신호등 3개 일러스트) — 1200x630px
   - Next.js ImageResponse로 생성하거나 정적 파일 배치
-- [ ] robots.txt: public/robots.txt (전체 허용)
-- [ ] 404 페이지: src/app/not-found.tsx
+- [x] robots.txt: public/robots.txt (전체 허용)
+- [x] 404 페이지: src/app/not-found.tsx
   - "페이지를 찾을 수 없어요" + 메인으로 돌아가기 버튼
-- [ ] 전역 에러 페이지: src/app/error.tsx
+- [x] 전역 에러 페이지: src/app/error.tsx
   - "문제가 생겼어요" + 다시 시도 버튼
-- [ ] 전체 점검
+- [x] 전체 점검
   - 모든 API 엔드포인트 정상 동작 확인
   - 모바일 뷰 레이아웃 확인
   - 에러 상태 UI 확인 (네트워크 끊김, 잘못된 입력 등)
   - 한국어 텍스트 누락 확인
   - console 에러/경고 정리
-- [ ] README.md 작성
+- [x] README.md 작성
   - 프로젝트 설명
   - 기술 스택
   - 로컬 실행 방법
   - 환경변수 목록
   - 배포 방법 (Vercel)
-- [ ] 데이터 정리 SQL 안내 추가 (README에)
+- [x] 데이터 정리 SQL 안내 추가 (README에)
 
 **완료조건:**
-- [ ] SEO 메타 태그 정상 (개발자 도구에서 확인)
-- [ ] OG 이미지 미리보기 정상
-- [ ] 404, 에러 페이지 정상 표시
-- [ ] 모바일 + 데스크탑 레이아웃 깨지지 않음
-- [ ] README 완성
-- [ ] 전체 기능 정상 동작
+- [x] SEO 메타 태그 정상 (개발자 도구에서 확인)
+- [x] OG 이미지 미리보기 정상
+- [x] 404, 에러 페이지 정상 표시
+- [x] 모바일 + 데스크탑 레이아웃 깨지지 않음
+- [x] README 완성
+- [x] 전체 기능 정상 동작
